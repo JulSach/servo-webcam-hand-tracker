@@ -12,8 +12,11 @@ class Camera:
 
     def convertFrame(self, frame):
         # Convert and return frame from BGR to RGB
-        frame = cv.cvtColor(frame, cv.COLOR_BGR2RGB)
-        return frame
+        return cv.cvtColor(frame, cv.COLOR_BGR2RGB)
+    
+    def showFrame(self, frame):
+        # Display frame
+        cv.imshow('Camera', frame)
 
     def closeCamera(self):
         self.cap.release()
