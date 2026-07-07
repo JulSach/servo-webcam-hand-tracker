@@ -22,7 +22,7 @@ class HandTracker:
         print('Hand Landmarker Result: {}'.format(result))
 
     def inputFrame(self, frame):
-        # frame from OpenCv converted to MediaPipe Image object
+        # Frame from OpenCv converted to MediaPipe Image object
         img = mp.Image(mp.ImageFormat.SRGB, frame)
         return img
 
