@@ -9,5 +9,5 @@ class HandTracker:
         self.HandLandmarker = mp.tasks.vision.HandLandmarker
         self.HandLandmarkerOptions = mp.tasks.vision.HandLandmarkerOptions
         self.HandLandmarkerResult = mp.tasks.vision.HandLandmarkerResult
-        self.VisionRunnignMode = mp.tasks.vision.RunningMode
+        self.VisionRunningMode = mp.tasks.vision.RunningMode
         
