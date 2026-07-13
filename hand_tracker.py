@@ -17,10 +17,14 @@ class HandTracker:
         # Initialize HandLandmarker detector with previous options
         self.landmarker = self.HandLandmarker.create_from_options(self.options)
 
+        # List to store hand landmarkers
+        self.landmarker_list = []
+        
     def result_callback(self, result, output_image, timestamtp_ms):
         # Print X Y and Z coords of each landmark
         print("---------Landmark Coords---------")
         for hand_number, hands in enumerate(result.hand_landmarks): # Go through collection of hands
+            self.landmarker_list = hands # Store list of landmarkers
             for landmark_number, landmarks in enumerate(hands): # Go through landmarks in each hand
                 print(f"Landmark {landmark_number}: x = {landmarks.x}, y = {landmarks.y}, z = {landmarks.z}") # Print each coord of each landmark
         print("---------------------------------")
@@ -32,6 +36,9 @@ class HandTracker:
 
     def landmarkDetection(self, image, time):
         self.landmarker.detect_async(image, time)
+
+    def getLandmarks(self):
+        return self.landmarker_list
     
     def closeDetector(self):
         self.landmarker.close()
