@@ -7,6 +7,8 @@ tracker = HandTracker()
 
 time_ms = 0
 
+landmarks = []
+
 while True:
     success, frame = cam.readFrame()
 
@@ -22,6 +24,9 @@ while True:
 
     # Detect hand landmarks on Image object
     tracker.landmarkDetection(img, time_ms)
+
+    # Store list of landmarks
+    landmarks = tracker.getLandmarks()
     
     # Display the hand tracked frame
     cam.showFrame(frame)
@@ -32,7 +37,7 @@ while True:
     # If 'q' pressed, break out of loop
     if cv.waitKey(1) & 0xFF == ord('q'):
         break
-
+        
 # Close camera after pressing 'q'
 cam.closeCamera()
 tracker.closeDetector()
