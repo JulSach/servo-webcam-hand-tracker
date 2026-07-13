@@ -12,7 +12,7 @@ class HandTracker:
         self.VisionRunningMode = mp.tasks.vision.RunningMode
 
         # Initialize HandLandmarker detector options, BaseOptions sets path for where model is
-        self.options = self.HandLandmarkerOptions(base_options = self.BaseOptions(model_asset_path = 'C:/Users/Julian Sachedina/OneDrive/Desktop/Project/hand_landmarker.task'), running_mode = self.VisionRunningMode.LIVE_STREAM, result_callback = self.result_callback)
+        self.options = self.HandLandmarkerOptions(base_options = self.BaseOptions(model_asset_path = 'hand_landmarker.task'), running_mode = self.VisionRunningMode.LIVE_STREAM, result_callback = self.result_callback)
 
         # Initialize HandLandmarker detector with previous options
         self.landmarker = self.HandLandmarker.create_from_options(self.options)
