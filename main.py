@@ -7,6 +7,10 @@ def convertToPixelCoords(x, y):
     pixel_y = y * 480 # Y multiplied by 480 pixel height
     return pixel_x, pixel_y
 
+def drawLandmarks(pixel_x, pixel_y, frame):
+    drawn_frame = cv.circle(frame, (pixel_x, pixel_y), 15, (0,0,255), thickness = 2) # Use OpenCV circle method to draw circle onto frame
+    return drawn_frame
+
 cam = Camera()
 tracker = HandTracker()
 
