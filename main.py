@@ -36,6 +36,11 @@ while True:
 
     # Store list of landmarks
     landmarks = tracker.getLandmarks()
+
+    # Go through each landmark in landmarks list, convert each x and y to respective pixel coords, draw circles in those places
+    for landmark in landmarks:
+        pixel_x, pixel_y = convertToPixelCoords(landmark.x, landmark.y)
+        frame = drawLandmarks(pixel_x, pixel_y, frame)
     
     # Display the hand tracked frame
     cam.showFrame(frame)
