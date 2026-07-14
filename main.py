@@ -2,6 +2,11 @@ import cv2 as cv
 from camera import Camera
 from hand_tracker import HandTracker
 
+def convertToPixelCoords(x, y):
+    pixel_x = x * 640 # X multiplied by 640 pixel width
+    pixel_y = y * 480 # Y multiplied by 480 pixel height
+    return pixel_x, pixel_y
+
 cam = Camera()
 tracker = HandTracker()
 
