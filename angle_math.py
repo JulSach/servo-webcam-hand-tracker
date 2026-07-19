@@ -13,3 +13,7 @@ class AngleMath:
 
         # Calculate the dot product
         dot_product = (vector_ba[0] * vector_bc[0]) + (vector_ba[1] * vector_bc[1])
+
+        # Calculate magnitude of vectors
+        magnitude_ba = np.linalg.norm(vector_ba)
+        magnitude_bc = np.linalg.norm(vector_bc)
