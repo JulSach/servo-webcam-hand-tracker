@@ -6,3 +6,7 @@ class AngleMath:
         point_a = np.array([landmark_a.x, landmark_a.y])
         point_b = np.array([landmark_b.x, landmark_b.y])
         point_c = np.array([landmark_c.x, landmark_c.y])
+
+        # Create two 2-D vectors, BA and BC
+        vector_ba = point_a - point_b
+        vector_bc = point_c - point_b
