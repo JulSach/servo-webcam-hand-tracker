@@ -20,6 +20,7 @@ class AngleMath:
 
         # Calculate theta
         theta = np.arccos((dot_product) / (magnitude_ba * magnitude_bc))
+        angle = np.degrees(theta)
 
         # Return angle between the 2 vectors
-        return theta
+        return angle
