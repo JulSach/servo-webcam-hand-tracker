@@ -10,3 +10,6 @@ class AngleMath:
         # Create two 2-D vectors, BA and BC
         vector_ba = point_a - point_b
         vector_bc = point_c - point_b
+
+        # Calculate the dot product
+        dot_product = (vector_ba[0] * vector_bc[0]) + (vector_ba[1] * vector_bc[1])
