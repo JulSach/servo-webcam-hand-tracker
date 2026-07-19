@@ -17,3 +17,9 @@ class AngleMath:
         # Calculate magnitude of vectors
         magnitude_ba = np.linalg.norm(vector_ba)
         magnitude_bc = np.linalg.norm(vector_bc)
+
+        # Calculate theta
+        theta = np.cos((dot_product) / (magnitude_ba * magnitude_bc))
+
+        # Return angle between the 2 vectors
+        return theta
