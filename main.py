@@ -41,6 +41,14 @@ while True:
     for landmark in landmarks:
         pixel_x, pixel_y = convertToPixelCoords(landmark.x, landmark.y)
         frame = drawLandmarks(pixel_x, pixel_y, frame)
+
+    # Calculate and store finger angles iff frame contains a hand
+    if landmarks:
+        thumb_finger_angle = math.fingerAngle(landmarks[4], landmarks[3], landmarks[2])
+        index_finger_angle = math.fingerAngle(landmarks[8], landmarks[6], landmarks[5])
+        middle_finger_angle = math.fingerAngle(landmarks[12], landmarks[10], landmarks[9])
+        ring_finger_angle = math.fingerAngle(landmarks[16], landmarks[14], landmarks[13])
+        pinky_finger_angle = math.fingerAngle(landmarks[20], landmarks[18], landmarks[17])
     
     # Display the hand tracked frame
     cam.showFrame(frame)
